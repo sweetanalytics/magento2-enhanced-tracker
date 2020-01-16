@@ -4,7 +4,7 @@
         <sweettracker>
             <general>
                 <enabled>1</enabled>
-                <tracking_id></tracking_id>
+                <tracking_id/>
             </general>
         </sweettracker>
     </default>
