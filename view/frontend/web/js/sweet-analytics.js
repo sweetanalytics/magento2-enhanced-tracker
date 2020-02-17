@@ -15,7 +15,7 @@ define([
             a.src = g;
             m.parentNode.insertBefore(a, m);
 
-        })(window, document, 'script', 'https://track.adtype.com/sweet.min.js', 'adType');
+        })(window, document, 'script', 'https://track.sweetanalytics.com/sweet.min.js', 'adType');
 
         // Process page info
         adType.init(config.trackingId);
