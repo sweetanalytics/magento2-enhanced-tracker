@@ -12,7 +12,7 @@ use YelHex\SweetTracker\Helper\Data;
  *
  *  Sweet Tracker class allow Magento 2 website to be tracked through Sweet.
  *
- * @author Tomas Marcik <tomas@yellowhexagon.com>
+ * @author Sweet Analytics <team@sweetanalytics.com>
  */
 class SweetTracker extends \Magento\Framework\View\Element\Template
 {
