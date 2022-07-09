@@ -8,10 +8,18 @@
     "php": ">=7.1",
     "magento/framework": "^100.1.0|101.0.*|^102.0.0|^103.0.0"
   },
+  "config": {
+    "allow-plugins": true
+  },
   "autoload": {
-    "files": [ "registration.php" ],
+    "files": [
+      "registration.php"
+    ],
     "psr-4": {
       "YelHex\\SweetTracker\\": ""
     }
+  },
+  "extra": {
+    "magento-force": "override"
   }
 }
