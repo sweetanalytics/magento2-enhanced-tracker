@@ -10,8 +10,9 @@ use YelHex\SweetTracker\Helper\Data;
 /**
  * Class SweetTracker
  *
- * @package YelHex\SweetTracker\Block
- * @author Tomas Marcik <tomas@yellowhexagon.com>
+ *  Sweet Tracker class allow Magento 2 website to be tracked through Sweet.
+ *
+ * @author Sweet Analytics <team@sweetanalytics.com>
  */
 class SweetTracker extends \Magento\Framework\View\Element\Template
 {
@@ -25,6 +26,15 @@ class SweetTracker extends \Magento\Framework\View\Element\Template
     /** @var Data */
     private $helper;
 
+    /**
+     * Construction method
+     *
+     * @param Context $context
+     * @param Onepage $onepage
+     * @param CategoryFactory $categoryFactory
+     * @param Data $helper
+     * @param array $data
+     */
     public function __construct(
         Context $context,
         Onepage $onepage,
@@ -38,6 +48,9 @@ class SweetTracker extends \Magento\Framework\View\Element\Template
         $this->helper = $helper;
     }
 
+    /**
+     * GetTrackingId method
+     */
     public function getTrackingId()
     {
         //Check if tracking_id
@@ -51,19 +64,29 @@ class SweetTracker extends \Magento\Framework\View\Element\Template
         return null;
     }
 
+    /**
+     * GetOrder method
+     */
     public function getOrder()
     {
         return $this->onepage->getCheckout()->getLastRealOrder();
     }
 
+    /**
+     * IsSuccessPage method
+     */
     public function isSuccessPage()
     {
         return $this->getRequest()->getFullActionName() == 'checkout_onepage_success';
     }
 
+    /**
+     * GetCategoryName method
+     *
+     * @param var $categoryId
+     */
     public function getCategoryName($categoryId)
     {
-        /** @var \Magento\Catalog\Model\Category $category */
         $category = $this->categoryFactory->create()->load($categoryId);
 
         if ($category && $category->getId()) {
