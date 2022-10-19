@@ -5,20 +5,20 @@ define([
 
     function loadSweetAnalyticsScript(config){
         (function (i, s, o, g, r, a, m) {
-            i.adType=i.adType||{};
-            i.adType.q=adType.q||[];
-            i.adType.init=function(e){this.cid=e;};
-            i.adType.track=function(){this.q.push(arguments)};
+            i.sweet=i.sweet||{};
+            i.sweet.q=sweet.q||[];
+            i.sweet.init=function(e){this.cid=e;};
+            i.sweet.track=function(){this.q.push(arguments)};
             a = s.createElement(o);
             m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m);
 
-        })(window, document, 'script', 'https://track.sweetanalytics.com/sweet.min.js', 'adType');
+        })(window, document, 'script', 'https://track.sweetanalytics.com/sweet.min.js', 'sweet');
 
         // Process page info
-        adType.init(config.trackingId);
+        sweet.init(config.trackingId);
     }
 
     function processOrderData(config){
@@ -26,7 +26,7 @@ define([
 
         // Collect orders data for Sweet Analytics
         if (order) {
-            adType.track('addTransaction', {
+            sweet.track('addTransaction', {
                 transaction_id: order.transaction_id,
                 total: order.total
             });
@@ -34,11 +34,11 @@ define([
             // Collect product data for Sweet Analytics
             if (order.products) {
                 $.each(order.products, function (index, value) {
-                    adType.track('addItem', value);
+                    sweet.track('addItem', value);
                 });
             }
 
-            adType.track('transaction');
+            sweet.track('transaction');
         }
     }
 
@@ -60,7 +60,7 @@ define([
                 qty: $qty
             };
 
-            adType.track('addToBasket', addToCart);
+            sweet.track('addToBasket', addToCart);
         });
 
         /* Remove from cart Event */
@@ -83,7 +83,7 @@ define([
                 id: pid
             };
 
-        adType.track('removeFromBasket', {
+        sweet.track('removeFromBasket', {
             id: product.productSku
         });
     }
@@ -103,7 +103,7 @@ define([
     }
 
     function pageTracking(config) {
-        adType.track('pageview', { category: config.pageUrl, action: 'view', value: 1 });
+        sweet.track('pageview', { category: config.pageUrl, action: 'view', value: 1 });
 
     }
     /**
