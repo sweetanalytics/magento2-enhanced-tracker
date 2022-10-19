@@ -38,7 +38,7 @@ if ($block->isSuccessPage() && $order && $order->getId()) {
             "YelHex_SweetTracker/js/sweet-analytics": {
 "trackingId":"<?=$block->escapeHtmlAttr($trackingId)?>",
 "pageUrl":"<?=$block->escapeHtmlAttr($block->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]))?>",
-"order":<?=$block->escapeHtmlAttr($orderObject ? json_encode($orderObject) : 'false')?>
+"order":<?=json_encode($orderObject)?>
             }
         }
     }
