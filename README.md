@@ -32,3 +32,8 @@ You have to enable module and set given tracking ID to get plugin working.
   * Open Source (Community)
   * Commerce (Enterprise)
 * PHP 7.1+
+
+## Magento Commerce Marketplace
+To upload to the AdobeCommerce Marketplace go to https://commercedeveloper.adobe.com/extensions/ and upload a zip using the following command:
+
+> zip -r sweetanalytics_sweet-tracker-1.X.X.zip ./ -x './.git/*'
