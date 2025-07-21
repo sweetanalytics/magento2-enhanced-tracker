@@ -1,7 +1,7 @@
 {
   "name": "sweetanalytics/sweet-tracker",
   "type": "magento2-module",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "OSL-3.0",
   "description": "Magento module for Sweet Analytics Tracker.",
   "require": {
